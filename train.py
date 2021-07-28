@@ -37,6 +37,9 @@ def _init_parser() -> ArgumentParser:
         'model', type=str, choices=get_list_of_available_models_list(),
         help='Name of the model to use.')
     parser.add_argument(
+        'server', type=str, choices=["local","umserver","ucbserver"],
+        help='Name of the server to use.')
+    parser.add_argument(
         '--random_seed', type=int, default=1234,
         help='A number to seed the pseudo-random generators.')
     parser.add_argument(
@@ -92,7 +95,8 @@ def train(args: Namespace) -> None:
     model_ckpt_last = pl.callbacks.model_checkpoint.ModelCheckpoint(
         filename=args.model+'_last_{epoch}_{step}', save_weights_only=True)
     callbacks.append(model_ckpt_last)
-    model_ckpt_train = pl.callbacks.model_checkpoint.ModelCheckpoint(filename=args.model+'_train_{epoch}_{step}')
+    model_ckpt_train = pl.callbacks.model_checkpoint.ModelCheckpoint(
+        filename=args.model+'_train_{epoch}_{step}')
     callbacks.append(model_ckpt_train)
 
     if len(model.val_dataloader_names) > 0:
@@ -143,7 +147,12 @@ if __name__ == '__main__':
         FlowModel = get_model_reference(sys.argv[1])
         parser = FlowModel.add_model_specific_args(parser)
 
-    add_datasets_to_parser(parser, 'datasets.yml')
+    if sys.argv[2] == "umserver":
+        add_datasets_to_parser(parser, 'um_datasets.yml')
+    elif sys.argv[2] == "ucbserver":
+        add_datasets_to_parser(parser, 'ucb_datasets.yml')
+    else:
+        add_datasets_to_parser(parser, 'datasets.yml')
 
     parser = pl.Trainer.add_argparse_args(parser)
 

@@ -1,0 +1,9 @@
+flying_chairs: /datab/zxbian/AllDatasets/FlyingChairs_release
+flying_chairs2:
+flying_things3d:
+flying_things3d_subset:
+mpi_sintel: /datab/zxbian/AllDatasets/Sintel
+kitti_2012:
+kitti_2015: /datac/zxbian/AllDatasets/KITTI
+Mkitti: /datac/zxbian/AllDatasets/KITTI_multiview
+hd1k:
