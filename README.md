@@ -1,5 +1,12 @@
 # PyTorch Lightning Optical Flow
 
+# BZX
+
+1. to enable DDP, it needs pl==1.2.4
+
+
+
+
 ![GitHub CI flake8 status](https://github.com/hmorimitsu/ptlflow/actions/workflows/flake8.yml/badge.svg)
 ![GitHub CI pytest status](https://github.com/hmorimitsu/ptlflow/actions/workflows/pytest.yml/badge.svg)
 ![GitHub CI pytest pip status](https://github.com/hmorimitsu/ptlflow/actions/workflows/pytest_pip.yml/badge.svg)
