@@ -3,7 +3,8 @@
 # BZX
 
 1. to enable DDP, it needs pl==1.2.4
-
+2. too enable hsv jittering, higher version of torch vision is needed, it can be updated by
+``pip install torchvision==0.10.0 --no-deps``
 
 
 
