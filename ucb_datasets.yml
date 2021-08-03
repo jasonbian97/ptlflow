@@ -4,5 +4,5 @@ flying_things3d: /path/to/FlyingThings3D
 flying_things3d_subset: /path/to/FlyingThings3D_subset
 mpi_sintel: /mnt/ssd2/AllDatasets/Sintel
 kitti_2012:
-kitti_2015: /mnt/ssd2/AllDatasets/KITTI
+kitti_2015: /home/ajabri/zxbian/AllDatasets/KITTI
 hd1k: /path/to/HD1K
